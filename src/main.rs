@@ -1,3 +1,4 @@
+//! Le jeu Devine mon nombre !
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
@@ -37,6 +38,23 @@ fn read_int_from_stdin() -> Option<u32> {
     input.trim().parse::<u32>().ok() // turbofish
 }
 
+/// Encapsule la comparaison entre le nombre secret et la saisie.
+///
+/// # Arguments
+///
+/// * `secret` - Le nombre secret.
+/// * `input` - Le nombre saisi par l'utilisateur.
+///
+/// # Return value
+///
+/// Une instance de [`std::cmp::Ordering`] représentant le résultat de la comparaison.
+/// 
+/// # Examples
+///
+/// ```
+/// let comparison = get_ordering(12, 12);
+/// assert_eq!(comparison, Ordering::Equal);
+/// ```
 fn get_ordering(secret: u32, input: u32) -> Ordering {
     input.cmp(&secret)
 }
