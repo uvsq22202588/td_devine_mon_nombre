@@ -269,20 +269,30 @@ Cette seconde partie illustre l'usage des https://doc.rust-lang.org/book/appendi
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+$ git tag -a v1.0.0 -m "Version 1.0.0"
 ....
 . Créez une https://git-scm.com/book/fr/v2/Les-branches-avec-Git-Les-branches-en-bref[_branche_] (_branch_) git dénommée `devtools` pour les développements de ce TP.
 À la fin du TP, cette branche sera fusionnée dans `main`.
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+$ git checkout -b devtools
+Basculement sur la nouvelle branche 'devtools'
 ....
 . Utilisez https://github.com/rust-lang/rust-clippy[`cargo clippy`] pour vérifier votre code source et l'améliorer le cas échéant
 +
 .Quels types de remarques `clippy` a-t'il fait ?
 ....
-🡆 Répondre ici 🡄
+$ cargo clippy
+    Checking cfg-if v1.0.0
+    Checking ppv-lite86 v0.2.17
+    Checking libc v0.2.137
+    Checking getrandom v0.2.8
+    Checking rand_core v0.6.4
+    Checking rand_chacha v0.3.1
+    Checking rand v0.8.5
+    Checking devine_mon_nombre v0.1.0 (/home/hal/Documents/Dev/pef/td_devine_mon_nombre)
+    Finished dev [unoptimized + debuginfo] target(s) in 4.33s
 ....
 . _Factorisez_ votre programme en extrayant les fonctions suivantes
 +
