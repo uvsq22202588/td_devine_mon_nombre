@@ -135,14 +135,62 @@ Pour utiliser ce crate, nous allons faire appel à Cargo pour gérer la dépenda
 Quels fichiers et répertoires ont été générés par cette commande ?
 +
 ....
-🡆 Répondre ici 🡄
+$ cargo init
+    Created binary (application) package
+$ tree
+.
+├── Cargo.toml
+├── devine_mon_nombre
+├── LICENSE
+├── README.adoc
+└── src
+    ├── devine_mon_nombre.rs
+    └── main.rs
+
+1 directory, 6 files
 ....
 .. Déplacez `devine_mon_nombre.rs` vers `src/main.rs` en utilisant https://git-scm.com/docs/git-mv[`git mv`].
 .. Exécutez votre programme avec https://doc.rust-lang.org/cargo/commands/cargo-run.html[`cargo run`].
 Qu'est-ce qui a été généré dans le répertoire ?
 +
 ....
-🡆 Répondre ici 🡄
+$ cargo run
+   Compiling td_devine_mon_nombre v0.1.0 (/home/td_devine_mon_nombre)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.58s
+     Running `target/debug/td_devine_mon_nombre`
+Devine mon nombre !
+[...]
+$ tree
+.
+├── Cargo.lock
+├── Cargo.toml
+├── LICENSE
+├── README.adoc
+├── src
+│   └── main.rs
+└── target
+    ├── CACHEDIR.TAG
+    └── debug
+        ├── build
+        ├── deps
+        │   ├── td_devine_mon_nombre-5395ad4627383a1b
+        │   └── td_devine_mon_nombre-5395ad4627383a1b.d
+        ├── examples
+        ├── incremental
+        │   └── td_devine_mon_nombre-1bfup3veaou0y
+        │       ├── s-gfxeipbq6s-171700x-31xt3fjdouk0q
+        │       │   ├── 116ms33j7u2j2ct9.o
+        │       │   ├── [...]
+        │       │   ├── dep-graph.bin
+        │       │   ├── [...]
+        │       │   ├── query-cache.bin
+        │       │   ├── [...]
+        │       │   └── work-products.bin
+        │       └── s-gfxeipbq6s-171700x.lock
+        ├── td_devine_mon_nombre
+        └── td_devine_mon_nombre.d
+
+9 directories, 53 files
 ....
 . Ajoutez la bibliothèque externe https://crates.io/crates/rand[`rand`] dans le projet
 +
@@ -155,7 +203,23 @@ Vous allez donc éditer ce fichier.
 Que se passe-t'il lors du _build_ ?
 +
 ....
-🡆 Répondre ici 🡄
+La bibliothèque et ses dépendances sont téléchargées et compilées.
+$ cargo build
+    Updating crates.io index
+  Downloaded ppv-lite86 v0.2.17
+  Downloaded rand_core v0.6.4
+  Downloaded libc v0.2.137
+  Downloaded getrandom v0.2.8
+  Downloaded 4 crates (681.6 KB) in 0.61s
+   Compiling libc v0.2.137
+   Compiling cfg-if v1.0.0
+   Compiling ppv-lite86 v0.2.17
+   Compiling getrandom v0.2.8
+   Compiling rand_core v0.6.4
+   Compiling rand_chacha v0.3.1
+   Compiling rand v0.8.5
+   Compiling devine_mon_nombre v0.1.0 (/home/td_devine_mon_nombre)
+    Finished dev [unoptimized + debuginfo] target(s) in 11m 08s
 ....
 . Générez un nombre aléatoire avec https://docs.rs/rand/0.8.4/rand/trait.Rng.html#method.gen_range[rand::Rng::gen_range]
 .. Conservez le résultat de l'appel de `rand::thread_rng().gen_range(1..101)` dans une variable et construisez le projet. Lisez attentivement l'erreur obtenue.
