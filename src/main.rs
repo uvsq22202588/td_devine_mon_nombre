@@ -13,12 +13,13 @@ fn main() {
     let input: u32 = input.trim().parse().unwrap();
     println!("Votre nombre: {}", input);
     
-    if input == secret {
-        println!("Égal");
+    let message = if input == secret {
+        "Égal"
     } else if input > secret {
-        println!("Trop grand");
+        "Trop grand"
     } else {
-        println!("Trop petit");
-    }
+        "Trop petit"
+    };
 
+    println!("{}", message)
 }
