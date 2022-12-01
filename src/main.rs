@@ -9,7 +9,7 @@ fn main() {
 
     let secret = rand::thread_rng().gen_range(1..101);
     #[cfg(debug_assertions)]
-    println!("[DEBUG] Nombre secret : {}", secret);
+    eprintln!("[DEBUG] Nombre secret : {}", secret);
 
     loop {
         let input = read_int_from_stdin();
@@ -22,7 +22,7 @@ fn main() {
                 break;
             }
         } else {
-            println!("Saisie incorrecte.");
+            eprintln!("Saisie incorrecte.");
         }
     }
 }
@@ -31,7 +31,7 @@ fn read_int_from_stdin() -> Option<u32> {
     println!("Saisissez votre proposition.");
     let mut input = String::new();
     if let Err(error) = io::stdin().read_line(&mut input) { // ref_mut
-        println!("Erreur d'I/O : {}", error);
+        eprintln!("Erreur d'I/O : {}", error);
         return None;
     }
 
