@@ -40,7 +40,9 @@ TIP: Le nom d'un _crate_ respecte la notation https://doc.rust-lang.org/1.0.0/st
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+$ rustc src/devine_mon_nombre.rs
+$ ./devine_mon_nombre
+Hello World!
 ....
 +
 NOTE: Le message `Hello world!` doit apparaître à l'écran.
@@ -48,7 +50,41 @@ NOTE: Le message `Hello world!` doit apparaître à l'écran.
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+$ git status
+Sur la branche solution
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git restore <fichier>..." pour annuler les modifications dans le répertoire de travail)
+	modifié :         README.adoc
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	devine_mon_nombre
+	src/
+
+aucune modification n'a été ajoutée à la validation (utilisez "git add" ou "git commit -a")
+$ git add src/ README.adoc
+$ git status
+Sur la branche solution
+Modifications qui seront validées :
+  (utilisez "git restore --staged <fichier>..." pour désindexer)
+	modifié :         README.adoc
+	nouveau fichier : src/devine_mon_nombre.rs
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	devine_mon_nombre
+$ git commit -m"Termine l'initialisation du projet"
+[solution 9b3acd1] Termine l'initialisation du projet
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 src/devine_mon_nombre.rs
+$ git status
+Sur la branche solution
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+	devine_mon_nombre
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
 ....
 
 === Lire un nombre
