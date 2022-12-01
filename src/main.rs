@@ -11,20 +11,30 @@ fn main() {
     loop {
         println!("Saisissez votre proposition.");
         let mut input = String::new();
-        io::stdin().read_line(&mut input).unwrap();
-        let input: u32 = input.trim().parse().unwrap();
-        println!("Votre nombre: {}", input);
+        if let Err(error) = io::stdin().read_line(&mut input) {
+            println!("Erreur d'I/O : {}", error);
+            continue;
+        }
 
-        let message = match input.cmp(&secret) {
-            Ordering::Less => "Trop petit",
-            Ordering::Equal => "Égal",
-            Ordering::Greater => "Trop grand",
-        };
+        match input.trim().parse::<u32>() {
+            Ok(input) => {
+                println!("Votre nombre: {}", input);
 
-        println!("{}", message);
+                let message = match input.cmp(&secret) {
+                    Ordering::Less => "Trop petit",
+                    Ordering::Equal => "Égal",
+                    Ordering::Greater => "Trop grand",
+                };
 
-        if input.cmp(&secret) == Ordering::Equal {
-            break;
+                println!("{}", message);
+
+                if input.cmp(&secret) == Ordering::Equal {
+                    break;
+                }
+            }
+            Err(error) => {
+                println!("Erreur de saisie : {}", error);
+            }
         }
     }
 }
