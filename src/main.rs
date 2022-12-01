@@ -78,3 +78,26 @@ fn has_found(comparison: Ordering) -> bool {
 // if_let : construction if let (https://doc.rust-lang.org/book/ch06-03-if-let.html)
 // ref_mut : référence mutable (https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#mutable-references)
 // turbofish : notation ::<> (https://doc.rust-lang.org/std/primitive.str.html#method.parse)
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn twelve_equals_twelve() {
+        let comparison = get_ordering(12, 12);
+        assert_eq!(Ordering::Equal, comparison);
+    }
+
+    #[test]
+    fn twelve_greater_than_five() {
+        let comparison = get_ordering(12, 5);
+        assert_eq!(Ordering::Less, comparison);
+    }
+
+    #[test]
+    fn twelve_lesser_than_twenty() {
+        let comparison = get_ordering(12, 20);
+        assert_eq!(Ordering::Greater, comparison);
+    }
+}
