@@ -379,23 +379,33 @@ IMPORTANT: pensez à importer le module englobant dans le module de test (`use s
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+$ git checkout main
+Basculement sur la branche 'main'
+$ git merge devtools 
+Mise à jour 63e506e..3787aa4
+Fast-forward
+ Cargo.lock  |  65 +++++++++++++++++++++++++++++++++++++++++++++++
+ Cargo.toml  |   1 +
+ README.adoc |  33 +++++++++++++++++++-----
+ src/main.rs | 109 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------
+ 4 files changed, 179 insertions(+), 29 deletions(-)
 ....
 . Créez une nouvelle étiquette pour cette version du projet
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+$ git tag -a v2.0.0 -m "Version 2.0.0"
 ....
 . Synchronisez votre projet avec github et envoyez-y également les étiquettes
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+$ git push -u --tags origin main
 ....
 . Supprimez la branche locale `devtools`
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+$ git branch -d devtools
+Branche devtools supprimée (précédemment 3787aa4).
 ....
