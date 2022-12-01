@@ -291,7 +291,7 @@ $ cargo clippy
     Checking rand_core v0.6.4
     Checking rand_chacha v0.3.1
     Checking rand v0.8.5
-    Checking devine_mon_nombre v0.1.0 (/home/hal/Documents/Dev/pef/td_devine_mon_nombre)
+    Checking devine_mon_nombre v0.1.0 (/home/td_devine_mon_nombre)
     Finished dev [unoptimized + debuginfo] target(s) in 4.33s
 ....
 . _Factorisez_ votre programme en extrayant les fonctions suivantes
@@ -333,13 +333,24 @@ $ cargo clippy
 . Dans quel répertoire Cargo place-t-il le résultat de la compilation ?
 +
 ....
-🡆 Répondre ici 🡄
+Dans le répertoire target/
 ....
 . Lancez à nouveau une compilation avec Cargo mais en ajoutant l'option `--release`.
 Quelles différences voyez-vous ?
 +
 ....
-🡆 Répondre ici 🡄
+L'exécutable est optimisé et ne contient plus les informations pour le débogage.
+La compilation se déroule dans le répertoire release.
+$ cargo build --release
+   Compiling libc v0.2.137
+   Compiling cfg-if v1.0.0
+   Compiling ppv-lite86 v0.2.17
+   Compiling getrandom v0.2.8
+   Compiling rand_core v0.6.4
+   Compiling rand_chacha v0.3.1
+   Compiling rand v0.8.5
+   Compiling devine_mon_nombre v0.1.0 (/home/td_devine_mon_nombre)
+    Finished release [optimized] target(s) in 6.06s
 ....
 . Masquez le message concernant la valeur du nombre secret lorsque le programme n'est plus en phase de mise au point.
 +
@@ -348,7 +359,7 @@ NOTE: Étudiez l'option https://doc.rust-lang.org/cargo/reference/profiles.html[
 +
 .Que fait cette bibliothèque ?
 ....
-🡆 Répondre ici 🡄
+La bibliothèque console permet d'accéder aux fonctionnalités du terminal.
 ....
 . Modifiez votre programme pour que le titre soit affiché en bleu
 

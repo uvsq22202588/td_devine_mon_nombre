@@ -2,11 +2,13 @@
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
+use console::style;
 
 fn main() {
-    println!("Devine mon nombre !\n");
+    println!("{}\n", style("Devine mon nombre!").cyan());
 
     let secret = rand::thread_rng().gen_range(1..101);
+    #[cfg(debug_assertions)]
     println!("[DEBUG] Nombre secret : {}", secret);
 
     loop {
