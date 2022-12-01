@@ -10,5 +10,15 @@ fn main() {
     println!("Saisissez votre proposition.");
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
-    println!("Votre nombre: {}", input.trim());
+    let input: u32 = input.trim().parse().unwrap();
+    println!("Votre nombre: {}", input);
+    
+    if input == secret {
+        println!("Égal");
+    } else if input > secret {
+        println!("Trop grand");
+    } else {
+        println!("Trop petit");
+    }
+
 }
