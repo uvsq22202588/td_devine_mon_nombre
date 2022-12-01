@@ -110,12 +110,14 @@ NOTE: Inspirez-vous de l'exemple fourni dans la https://doc.rust-lang.org/std/io
 .. Que signifie la notation `&mut` devant le nom de la variable dans l'appel à `read_line` ?
 +
 ....
-🡆 Répondre ici 🡄
+Il s'agit d'un emprunt mutable du buffer qui va recevoir la chaîne saisie par l'utilisateur.
 ....
 .. Quel est le type de retour de `read_line` ? Quel est son utilité ?
 +
 ....
-🡆 Répondre ici 🡄
+read_line retourne une valeur de type std::io::Result (https://doc.rust-lang.org/std/io/type.Result.html).
+C'est une énumération permettant d'encapsuler la valeur de retour de type usize ou une erreur de type std::io::Error.
+Cette dernière valeur est utilisée dans le cas où l'exécution de read_line provoque une erreur d'I/O.
 ....
 .. Utilisez la méthode https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap[`unwrap`] pour désencapsuler la chaîne saisie.
 .. Affichez le nombre saisi à l'écran.
