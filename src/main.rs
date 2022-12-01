@@ -1,5 +1,6 @@
 use std::io;
 use rand::Rng;
+use std::cmp::Ordering;
 
 fn main() {
     println!("Devine mon nombre !\n");
@@ -13,12 +14,10 @@ fn main() {
     let input: u32 = input.trim().parse().unwrap();
     println!("Votre nombre: {}", input);
     
-    let message = if input == secret {
-        "Égal"
-    } else if input > secret {
-        "Trop grand"
-    } else {
-        "Trop petit"
+    let message = match input.cmp(&secret) {
+        Ordering::Less => "Trop petit",
+        Ordering::Equal => "Égal",
+        Ordering::Greater => "Trop grand",
     };
 
     println!("{}", message)
