@@ -202,7 +202,7 @@ Cette seconde partie illustre l'usage des https://doc.rust-lang.org/book/appendi
             let comparison = get_ordering(secret_number, input);
             display_result(comparison);
 
-            if has_found(compararison) {
+            if has_found(comparison) {
                 break;
             }
         } else {
