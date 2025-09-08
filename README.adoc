@@ -177,13 +177,13 @@ git push origin v1.0
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+git branch devtools
 ....
 . Utilisez https://github.com/rust-lang/rust-clippy[`cargo clippy`] pour vérifier votre code source et l'améliorer le cas échéant
 +
 .Quels types de remarques `clippy` a-t'il fait ?
 ....
-🡆 Répondre ici 🡄
+clippy est un linter pour rust, c'est à dire qu'il a amélioré et optimisé le code 
 ....
 . _Factorisez_ votre programme en extrayant les fonctions suivantes
 +

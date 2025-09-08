@@ -1,0 +1,1 @@
+searchState.loadedDescShard("src", 0, "Fonction comprennant toutes les autres, et initialise le …")
