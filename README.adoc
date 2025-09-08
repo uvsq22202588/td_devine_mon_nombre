@@ -49,7 +49,8 @@ NOTE: Le message `Hello world!` doit apparaître à l'écran.
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+git commit 
+git pull
 ....
 
 === Lire un nombre
