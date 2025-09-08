@@ -169,7 +169,8 @@ Cette seconde partie illustre l'usage des https://doc.rust-lang.org/book/appendi
 +
 .Quelles commandes avez-vous tapées ?
 ....
-🡆 Répondre ici 🡄
+git tag v1.0
+git push origin v1.0
 ....
 . Créez une https://git-scm.com/book/fr/v2/Les-branches-avec-Git-Les-branches-en-bref[_branche_] (_branch_) git dénommée `devtools` pour les développements de ce TP.
 À la fin du TP, cette branche sera fusionnée dans `main`.
