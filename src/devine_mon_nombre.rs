@@ -5,7 +5,7 @@ fn main() {
     println!("Saississez votre proposition.");
 
     let mut input = String::new();
-    io::stdin().read_line(&mut input);
+    io::stdin().read_line(&mut input).unwrap();
     
-    println!("Le nombre que vous avez dit est {}", input)
+    println!("Le nombre que vous avez dit est {}", input);
 }
